@@ -29,10 +29,21 @@
 
   <properties>
     <hive.path.to.root>..</hive.path.to.root>
+      <maven.compiler.target>1.8</maven.compiler.target>
+      <maven.compiler.source>1.8</maven.compiler.source>
   </properties>
 
   <dependencies>
-    <!-- dependencies are always listed in sorted order by groupId, artifectId -->
+      <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.18.12</version>
+          <scope>provided</scope>
+      </dependency>
+
+
+      <!-- dependencies are always listed in sorted order by groupId, artifectId -->
     <!-- intra-project -->
     <!-- used for vector code-gen -->
     <dependency>
@@ -890,6 +901,14 @@
           </execution>
         </executions>
       </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>8</source>
+                <target>8</target>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 
